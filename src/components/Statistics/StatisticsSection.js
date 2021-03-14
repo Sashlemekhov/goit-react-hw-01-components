@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import StatisticsItem from './StatisticsItem';
 import styles from './StatisticsSection.module.css';
 
-const StatisticsSection = ({ props }) => {
+const StatisticsSection = ({ props, title }) => {
   return (
     <section className={styles.statistics}>
-      <h2 className={styles.title}>Upload stats</h2>
+      {title && <h2 className={styles.title}>{title}</h2>}
       <ul className={styles.statList}>
         {props.map(prop => (
           <StatisticsItem key={prop.id}
@@ -17,7 +17,9 @@ const StatisticsSection = ({ props }) => {
   )
 }
 
+
 StatisticsSection.propTypes = {
+  title: PropTypes.string,
   props: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired

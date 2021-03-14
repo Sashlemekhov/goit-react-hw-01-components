@@ -29,7 +29,10 @@ const App = () => {
 
       <BlockContainer>
 
-        <StatisticsSection props={statisticalData} />
+        <StatisticsSection
+          props={statisticalData}
+          title={"Upload stats"}
+        />
         <TransactionHistory props={transactionsData} />
 
       </BlockContainer>
